@@ -5,6 +5,7 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles, withStyles } from '@material-ui/core';
 import InputBase from '@material-ui/core/InputBase';
+import { GROUP_TYPES } from '../../constants/GROUP_TYPES';
 
 const BootstrapInput = withStyles(theme => ({
   root: {
@@ -75,9 +76,9 @@ export const GroupBy = props => {
         input={<BootstrapInput name="group" id="age-customized-select" />}
       >
         <option value=''/>
-        <option value='day'>Day</option>
-        <option value='week'>Week</option>
-        <option value='month'>Month</option>
+        <option value={GROUP_TYPES.DAY}>Day</option>
+        <option value={GROUP_TYPES.WEEK}>Week</option>
+        <option value={GROUP_TYPES.MONTH}>Month</option>
       </NativeSelect>
     </FormControl>
   )
