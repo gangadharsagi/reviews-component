@@ -16,6 +16,13 @@ re factor code
 
 ## Summary
 
+1. Reviews can be grouped by day, week, or month. Make sure you show the time interval for
+which reviews are shown (i.e. “05.02”, “05.02 - 11.02” or “January”)
+2. Reviews can be filtered by number of stars. The default state should show 5 star reviews only.
+3. Reviews should be sortable by time. Users should be able to toggle between showing most
+recent reviews first, or last.
+4. Infinite scrolling. As you scroll, more reviews will be loaded.
+
 
 ##### Custome Middleware
 Created the custome middleware to handle the all API requests in the application with common action, instead of creating different API calls in action creators.
