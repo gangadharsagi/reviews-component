@@ -1,6 +1,7 @@
 # InfiniteScrollReview (React, Redux)
 
 
+TO-DO 
 Service Integration with Redux (saga)
 convert time stamp to iso format
 Group By
@@ -40,6 +41,5 @@ Created the custome middleware to handle the all API requests in the application
 Below are the steps to get it running.
 
  - Install all the dependences in the application by using the command ``` npm install ```
- - Express server is used to fetch the data from server, hence start the server in seperate terminal by using command `` npm run start:server ``
  - Then start the application in another terminal by using command ``` npm start ```
  - Run the tests using command ``` npm test ```

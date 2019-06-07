@@ -33,22 +33,24 @@ export class InfiniteScrollReview extends React.Component {
   render() {
   return (
     <div className='container'>
-      <GroupAndOrderBy />
-      <FilterByContainer />
-      <InfiniteScroll
-        dataLength={this.props.reviews.length}
-        next={this.fetchMoreData}
-        hasMore={this.props.hasMore}
-        loader={<h4>Loading...</h4>}
-        endMessage='No More Results'
-      >
-        {
-          this.props.group === '' ?
-            <ReviewDetailsContainer /> :
-            <GroupReviewDetailsContainer />
-        }
+      <div className={'wrapper'}>
+        <GroupAndOrderBy />
+        <FilterByContainer />
+        <InfiniteScroll
+          dataLength={this.props.reviews.length}
+          next={this.fetchMoreData}
+          hasMore={this.props.hasMore}
+          loader={<h4 className='text-center'>Loading...</h4>}
+          endMessage={<h4 className='text-center'>No More Results</h4>}
+        >
+          {
+            this.props.group === '' ?
+              <ReviewDetailsContainer /> :
+              <GroupReviewDetailsContainer />
+          }
 
-      </InfiniteScroll>
+        </InfiniteScroll>
+      </div>
   </div>
   )}
 }

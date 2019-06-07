@@ -1,5 +1,12 @@
 .container {
-  width: 980px;
+  width: 654px;
   margin: 0 auto;
   padding: 25px;
+}
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.text-center {
+  text-align: center;
 }

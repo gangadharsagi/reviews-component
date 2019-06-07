@@ -5,6 +5,7 @@ import NativeSelect from '@material-ui/core/NativeSelect';
 import FormControl from '@material-ui/core/FormControl';
 import { makeStyles, withStyles } from '@material-ui/core';
 import InputBase from '@material-ui/core/InputBase';
+import { SORTING } from '../../constants/SORTING';
 
 const BootstrapInput = withStyles(theme => ({
   root: {
@@ -75,8 +76,8 @@ export const OrderBy = props => {
         input={<BootstrapInput name="order" id="group-native-simple" />}
       >
         <option value='' />
-        <option value={0}>Ascending</option>
-        <option value={1}>Descending</option>
+        <option value={SORTING.MOST_OLDEST}>Ascending</option>
+        <option value={SORTING.MOST_RECENT}>Descending</option>
       </NativeSelect>
   </FormControl>
   )
