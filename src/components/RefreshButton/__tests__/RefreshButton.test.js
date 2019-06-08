@@ -1,13 +1,17 @@
-import * as React from 'react';
+import 'jsdom-global/register';
+import React from 'react';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import { RefreshButton } from '../RefreshButton';
-import { mount } from 'enzyme';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('RefreshButton', () => {
   it('should render component', () => {
-    const MountedRefreshButton = mount(
+    const Wrapper = shallow(
       <RefreshButton />,
     );
-    const expected = MountedRefreshButton.exists();
+    const expected = Wrapper.exists();
     const result = true;
     expect(expected).toEqual(result);
   });

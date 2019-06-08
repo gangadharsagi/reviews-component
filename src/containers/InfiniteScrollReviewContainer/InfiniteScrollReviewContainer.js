@@ -12,7 +12,6 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  /* TO-DO make it as bind action creator */
   fetchReviewItems: (pageNumber) => {
     dispatch(fetchReviews(pageNumber))
   }
