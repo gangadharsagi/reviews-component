@@ -6,10 +6,6 @@ export const mapStateToProps = (state) => ({
   cards: selectSortedCardsSelector(state),
 });
 
-export const mapDispatchToProps = (dispatch) => ({
-});
-
 export const ReviewDetailsContainer = connect(
   mapStateToProps,
-  mapDispatchToProps,
 )(ReviewDetails);

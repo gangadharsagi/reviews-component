@@ -3,20 +3,14 @@ import { getGroupBy, groupBySelector } from '../groupBySelector';
 describe('getGroupBy', () => {
   it('should select data from the store state', () => {
     const mockState = {
-      mockParam: {
-        mockData: 'mockString',
-      },
+      group: 'day'
     };
     const expected = getGroupBy(mockState);
-    const result = 'mockString';
+    const result = 'day';
     expect(expected).toEqual(result);
   });
   it('should provide a default value if there is no value in the store', () => {
-    const mockState = {
-      mockParam: {
-        mockData: 'mockString',
-      },
-    };
+    const mockState = {};
     const expected = getGroupBy(mockState);
     const result = '';
     expect(expected).toEqual(result);
@@ -26,20 +20,14 @@ describe('getGroupBy', () => {
 describe('groupBySelector', () => {
   it('should select data from the store state', () => {
     const mockState = {
-      mockParam: {
-        mockData: 'mockString',
-      },
+      group: 'day'
     };
     const expected = groupBySelector(mockState);
-    const result = 'mockString';
+    const result = 'day';
     expect(expected).toEqual(result);
   });
   it('should provide a default value if there is no value in the store', () => {
-    const mockState = {
-      mockParam: {
-        mockData: 'mockString',
-      },
-    };
+    const mockState = {};
     const expected = groupBySelector(mockState);
     const result = '';
     expect(expected).toEqual(result);

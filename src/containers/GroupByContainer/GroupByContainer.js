@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
 import { groupReviews } from '../../actions';
 import { GroupBy } from '../../components/GroupBy';
+import { groupBySelector } from '../../selectors/groupBySelector';
 
 export const mapStateToProps = (state) => ({
-  group: state.group,
+  group: groupBySelector(state),
 });
 
 export const mapDispatchToProps = (dispatch) => ({
   handleChange: (event) => {
-    dispatch(groupReviews(event.target.value.toLowerCase()))
+    dispatch(
+      groupReviews(event.target.value)
+    )
   }
 });
 

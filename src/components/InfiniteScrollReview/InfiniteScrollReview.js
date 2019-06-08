@@ -1,6 +1,7 @@
 import * as React from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import * as PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import isEmpty from 'lodash/isEmpty';
 import { GroupAndOrderBy } from '../GroupAndOrderBy';
 import { FilterByContainer } from '../../containers/FilterByContainer';
 import { GroupReviewDetailsContainer } from '../../containers/GroupReviewDetailsContainer';
@@ -8,9 +9,12 @@ import { ReviewDetailsContainer } from '../../containers/ReviewDetailsContainer'
 import './infinite-scroll-review.css';
 
 /**
- * A description explaining what we use this component for
+ * This component is used for Grouping, Sorting, Filtering and loading the
+ * reviews by using Infinite scroll
  *
- * @param {*} props - a descriptions of what props is
+ * @param {array} reviews - reviews from the response
+ * @param {boolean} hasMore - if hasMore is true will make call again on scroll
+ *  else won't make the call
  * @returns {*} a React Stateless Functional Component
  */
 export class InfiniteScrollReview extends React.Component {
@@ -44,7 +48,7 @@ export class InfiniteScrollReview extends React.Component {
           endMessage={<h4 className='text-center'>No More Results</h4>}
         >
           {
-            this.props.group === '' ?
+            isEmpty(this.props.group) ?
               <ReviewDetailsContainer /> :
               <GroupReviewDetailsContainer />
           }
@@ -55,6 +59,12 @@ export class InfiniteScrollReview extends React.Component {
   )}
 }
 
-InfiniteScrollReview.propTypes = {};
+InfiniteScrollReview.propTypes = {
+  reviews: PropTypes.array,
+  group: PropTypes.string,
+};
 
-InfiniteScrollReview.defaultProps = {};
+InfiniteScrollReview.defaultProps = {
+  reviews: [],
+  group: '',
+};

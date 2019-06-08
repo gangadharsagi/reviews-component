@@ -2,10 +2,10 @@ import { createSelector } from 'reselect';
 import { get } from 'lodash';
 
 /**
- * Description of what data this get function is getting
+ * This selector is used to get the hasMore value from the api response
  *
  * @param {{}} state - the redux state
- * @returns {*} the selected param
+ * @returns {boolean} hasMore Value from the store
  */
 export const getHasMore = state => get(
   state,
@@ -14,9 +14,9 @@ export const getHasMore = state => get(
 );
 
 /**
- * A description explaining what data we are getting and where we are using it.
+ * This selector is used to get the hasMore value from the api response
  */
 export const hasMoreSelector = createSelector(
   getHasMore,
-  HasMore => HasMore,
+  hasMore => hasMore,
 );

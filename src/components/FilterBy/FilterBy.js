@@ -3,6 +3,8 @@ import FormGroup from '@material-ui/core/FormGroup';
 import Checkbox from '@material-ui/core/Checkbox';
 import Icon from '@material-ui/core/Icon';
 import { makeStyles } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import { OrderBy } from '../OrderBy';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,10 +23,17 @@ const useStyles = makeStyles(theme => ({
 }));
 
 /**
- * A description explaining what we use this component for
+ * This component is used to filter the reviews based on the stars value
  *
- * @param {*} props - a descriptions of what props is
- * @returns {*} a React Class Component
+ * @param {string} handleCheckBoxChange - is used to update the star values in
+ *  store
+ * @param {string} handleCheckBoxChange - is used to update the star values
+ * @param {boolean} checked1 - checked1 value is used to filter 1star reviews
+ * @param {boolean} checked2 - checked2 value is used to filter 2star reviews
+ * @param {boolean} checked3 - checked3 value is used to filter 3star reviews
+ * @param {boolean} checked4 - checked4 value is used to filter 4star reviews
+ * @param {boolean} checked5 - checked5 value is used to filter 5star reviews
+ * @returns {*} a React Stateless Functional Component
  */
 export const FilterBy = ({
   handleCheckBoxChange,
@@ -109,4 +118,22 @@ export const FilterBy = ({
         </div>
       </FormGroup>
     );
+};
+
+FilterBy.propTypes = {
+  handleCheckBoxChange: PropTypes.func,
+  checked1: PropTypes.bool,
+  checked2: PropTypes.bool,
+  checked3: PropTypes.bool,
+  checked4: PropTypes.bool,
+  checked5: PropTypes.bool,
+};
+
+OrderBy.defaultProps = {
+  handleCheckBoxChange: () => {},
+  checked1: false,
+  checked2: false,
+  checked3: false,
+  checked4: false,
+  checked5: true,
 };

@@ -2,21 +2,21 @@ import { createSelector } from 'reselect';
 import { get } from 'lodash';
 
 /**
- * Description of what data this get function is getting
+ * This selector is used to get the reviews details
  *
  * @param {{}} state - the redux state
- * @returns {*} the selected param
+ * @returns {array} all reviews
  */
-export const getGetReviews = state => get(
+export const getReviews = state => get(
   state,
   'reviews',
   [],
 );
 
 /**
- * A description explaining what data we are getting and where we are using it.
+ * This selector is used to get the reviews details
  */
 export const getReviewsSelector = createSelector(
-  getGetReviews,
-  GetReviews => GetReviews,
+  getReviews,
+  reviews => reviews,
 );

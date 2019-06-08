@@ -3,22 +3,25 @@ import { getFilterByStars, filterByStarsSelector } from '../filterByStarsSelecto
 describe('getFilterByStars', () => {
   it('should select data from the store state', () => {
     const mockState = {
-      mockParam: {
-        mockData: 'mockString',
+      filter: {
+        checked1: false,
+        checked2: false,
+        checked3: false,
+
       },
     };
     const expected = getFilterByStars(mockState);
-    const result = 'mockString';
+    const result = {
+        checked1: false,
+        checked2: false,
+        checked3: false,
+    };
     expect(expected).toEqual(result);
   });
   it('should provide a default value if there is no value in the store', () => {
-    const mockState = {
-      mockParam: {
-        mockData: 'mockString',
-      },
-    };
+    const mockState = {};
     const expected = getFilterByStars(mockState);
-    const result = '';
+    const result = {};
     expect(expected).toEqual(result);
   });
 });
@@ -26,22 +29,25 @@ describe('getFilterByStars', () => {
 describe('filterByStarsSelector', () => {
   it('should select data from the store state', () => {
     const mockState = {
-      mockParam: {
-        mockData: 'mockString',
+      filter: {
+        checked1: false,
+        checked2: false,
+        checked3: false,
+
       },
     };
     const expected = filterByStarsSelector(mockState);
-    const result = 'mockString';
+    const result = {
+      checked1: false,
+      checked2: false,
+      checked3: false,
+    };
     expect(expected).toEqual(result);
   });
   it('should provide a default value if there is no value in the store', () => {
-    const mockState = {
-      mockParam: {
-        mockData: 'mockString',
-      },
-    };
+    const mockState = {};
     const expected = filterByStarsSelector(mockState);
-    const result = '';
+    const result = {};
     expect(expected).toEqual(result);
   });
 });

@@ -8,7 +8,7 @@ export const INITIAL_STATE = {
     4: false,
     5: true,
   },
-  order: '',
-  group: '',
+  order: undefined,
+  group: undefined,
   hasMore: true,
 };

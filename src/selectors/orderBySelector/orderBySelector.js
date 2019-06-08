@@ -2,10 +2,10 @@ import { createSelector } from 'reselect';
 import { get } from 'lodash';
 
 /**
- * Description of what data this get function is getting
+ * This selector is used to get the order value from the store
  *
  * @param {{}} state - the redux state
- * @returns {*} the selected param
+ * @returns {string} order value from the store
  */
 export const getOrderBy = state => get(
   state,
@@ -14,7 +14,7 @@ export const getOrderBy = state => get(
 );
 
 /**
- * A description explaining what data we are getting and where we are using it.
+ * This selector is used to get the order value from the store
  */
 export const orderBySelector = createSelector(
   getOrderBy,

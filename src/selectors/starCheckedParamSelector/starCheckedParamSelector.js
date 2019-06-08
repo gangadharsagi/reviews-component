@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect';
-import { get } from 'lodash';
+import get from 'lodash/get';
 import { filterByStarsSelector } from '../filterByStarsSelector';
 
 /**
- * A description explaining what data we are getting and where we are using it.
+ * This selector is used to get the filter Object property using param
  */
 export const starCheckedFactorySelector = (param, defaultValue) =>
   createSelector(
@@ -11,6 +11,9 @@ export const starCheckedFactorySelector = (param, defaultValue) =>
     data => get(data, param, defaultValue),
 );
 
+/**
+ * This selector is used to provide filter values in the store
+ */
 export const starCheckedParamSelector = {
   checked1: starCheckedFactorySelector(
     '1', false,

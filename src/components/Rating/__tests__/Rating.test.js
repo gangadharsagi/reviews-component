@@ -1,14 +1,26 @@
-import * as React from 'react';
+import 'jsdom-global/register';
+import React from 'react';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import { Rating } from '../Rating';
-import { mount } from 'enzyme';
+import { expect } from 'chai';
+import { Icon } from '@material-ui/core';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('Rating', () => {
   it('should render component', () => {
-    const MountedRating = mount(
+    const Wrapper = shallow(
       <Rating />,
     );
-    const expected = MountedRating.exists();
-    const result = true;
-    expect(expected).toEqual(result);
+    const expected = Wrapper.exists();
+    expect(expected).toBeTruthy();
+  });
+
+  it('should have 5 Icons inside rating component', () => {
+    const Wrapper = shallow(
+      <Rating />,
+    );
+    expect(Wrapper.find(Icon)).to.have.length(5);
   });
 });

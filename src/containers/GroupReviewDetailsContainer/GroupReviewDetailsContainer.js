@@ -6,14 +6,10 @@ import { groupBySelector } from '../../selectors/groupBySelector';
 
 export const mapStateToProps = (state) => ({
  groupedCards: selectGroupedCardsSelector(state),
- cardLabel: getCardHeadingsSelector(state),
+ cardHeadings: getCardHeadingsSelector(state),
  group: groupBySelector(state),
-});
-
-export const mapDispatchToProps = (dispatch) => ({
 });
 
 export const GroupReviewDetailsContainer = connect(
   mapStateToProps,
-  mapDispatchToProps,
 )(GroupReviewDetails);

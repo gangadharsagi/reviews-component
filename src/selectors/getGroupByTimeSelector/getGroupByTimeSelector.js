@@ -4,7 +4,8 @@ import { getFilteredDataByStarsSelector } from '../getFilteredDataByStarsSelecto
 import { getGroupByTimeHelper } from '../../helpers/getGroupByTimeHelper';
 
 /**
- * A description explaining what data we are getting and where we are using it.
+ * This selector is used to return grouped review items based on selected value
+ * in the Group By Dropdown.
  */
 export const getGroupByTimeSelector = createSelector(
   [
@@ -13,6 +14,6 @@ export const getGroupByTimeSelector = createSelector(
   ],
   (
     group,
-    filteredReviews
-  ) => Object.values(getGroupByTimeHelper(filteredReviews, group))
-)
+    filteredReviews,
+  ) => getGroupByTimeHelper(filteredReviews, group)
+);

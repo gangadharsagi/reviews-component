@@ -1,24 +1,25 @@
-import { getStarCheckedFactory, starCheckedParamSelector } from '../starCheckedParamSelector';
+import { starCheckedParamSelector, starCheckedFactorySelector } from '../starCheckedParamSelector';
 
-describe('getStarCheckedFactory', () => {
+describe('starCheckedParamSelector', () => {
   it('should select data from the store state', () => {
     const mockState = {
-      mockParam: {
-        mockData: 'mockString',
+      filter: {
+        1: true,
+        2: true,
+        3: true,
+        4: true,
+        5: true,
       },
     };
-    const expected = getStarCheckedFactory(mockState);
-    const result = 'mockString';
+    const expected = starCheckedParamSelector.checked1(mockState);
+    const result = true;
     expect(expected).toEqual(result);
   });
+
   it('should provide a default value if there is no value in the store', () => {
-    const mockState = {
-      mockParam: {
-        mockData: 'mockString',
-      },
-    };
-    const expected = getStarCheckedFactory(mockState);
-    const result = '';
+    const mockState = {};
+    const expected = starCheckedParamSelector.checked1(mockState);
+    const result = false;
     expect(expected).toEqual(result);
   });
 });
@@ -26,22 +27,23 @@ describe('getStarCheckedFactory', () => {
 describe('starCheckedFactorySelector', () => {
   it('should select data from the store state', () => {
     const mockState = {
-      mockParam: {
-        mockData: 'mockString',
+      filter: {
+        1: true,
+        2: true,
+        3: true,
+        4: true,
+        5: true,
       },
     };
-    const expected = starCheckedParamSelector(mockState);
-    const result = 'mockString';
+    const expected = starCheckedFactorySelector('1', false)(mockState);
+    const result = true;
     expect(expected).toEqual(result);
   });
+
   it('should provide a default value if there is no value in the store', () => {
-    const mockState = {
-      mockParam: {
-        mockData: 'mockString',
-      },
-    };
-    const expected = starCheckedParamSelector(mockState);
-    const result = '';
+    const mockState = {};
+    const expected = starCheckedFactorySelector('', false)(mockState);
+    const result = false;
     expect(expected).toEqual(result);
   });
 });

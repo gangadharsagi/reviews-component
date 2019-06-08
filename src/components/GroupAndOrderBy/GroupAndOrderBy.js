@@ -3,15 +3,14 @@ import { GroupByContainer } from '../../containers/GroupByContainer';
 import { OrderByContainer } from '../../containers/OrderByContainer';
 
 /**
- * A description explaining what we use this component for
+ * This component is used to display groupBy and sortBy components
  *
- * @param {*} props - a descriptions of what props is
  * @returns {*} a React Stateless Functional Component
  */
-export const GroupAndOrderBy = props => {
+export const GroupAndOrderBy = () => {
   return (
-    <form autoComplete="off">
+   <React.Fragment>
       <GroupByContainer />
       <OrderByContainer />
-    </form>
+   </React.Fragment>
 )};

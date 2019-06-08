@@ -3,9 +3,12 @@ import moment from 'moment';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import { makeStyles } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import get from 'lodash/get';
 import { LabelValueCell } from '../LabelValueCell';
-import logo from '../../assets/grey.jpeg';
+import { getProductImageHelper } from '../../helpers/getProductImageHelper';
 import './review-details.css';
+import { getProductTitleHelper } from '../../helpers/getProductTitleHelper';
 
 const useStyles = makeStyles(theme => ({
     icon: {
@@ -49,38 +52,49 @@ export const ReviewDetails = ({ cards }) => {
     const classes = useStyles();
     return <React.Fragment>
         {
-            cards && cards.map(item =>
-                <Card className={classes.card}>
+            cards ?
+              cards.map(item =>
+                <Card
+                  key={get(item, 'reviewId', '')}
+                  className={classes.card}>
                     <CardContent>
                         <div className={classes.cardContainer}>
                             <img
                               className={classes.logo}
                               alt='logo'
-                              src={logo}
+                              src={getProductImageHelper(get(item, 'productImg', ''))}
                             />
                             <LabelValueCell
                               label='DATE'
-                              value={moment(item.reviewCreated)
+                              value={moment(get(item, 'reviewCreated', ''))
                                 .format("DD.MM.YYYY")}
                             />
                             <LabelValueCell
                               label='STARS'
-                              value='value'
                               rating
-                              stars={item.stars}
+                              stars={get(item, 'stars', 0)}
                             />
                             <LabelValueCell
-                              label={item.childAsin}
-                              value={'value'}
+                              label={get(item, 'childAsin', '')}
+                              value={getProductTitleHelper(item)}
                             />
                         </div>
-                        <label className={classes.title}>{item.title}</label>
+                        <label className={classes.title}>{get(item, 'title', '')}</label>
                         <p className='grey'>
-                            {item.content}
+                            {get(item, 'content', '')}
                         </p>
                     </CardContent>
                 </Card>
-            )
+            ) :
+              null
         }
     </React.Fragment>
+};
+
+ReviewDetails.propTypes = {
+    cards: PropTypes.array,
+};
+
+ReviewDetails.defaultProps = {
+    cards: [],
 };

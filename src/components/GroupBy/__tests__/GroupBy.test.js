@@ -1,14 +1,26 @@
-import * as React from 'react';
+import 'jsdom-global/register';
+import React from 'react';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import { expect } from 'chai';
+import { NativeSelect } from '@material-ui/core';
 import { GroupBy } from '../GroupBy';
-import { mount } from 'enzyme';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('GroupBy', () => {
   it('should render component', () => {
-    const MountedGroupBy = mount(
+    const Wrapper = shallow(
       <GroupBy />,
     );
-    const expected = MountedGroupBy.exists();
-    const result = true;
-    expect(expected).toEqual(result);
+    const expected = Wrapper.exists();
+    expect(expected).toBeTruthy();
+  });
+
+  it('should have NativeSelect as a child', () => {
+    const Wrapper = shallow(
+      <GroupBy />,
+    );
+    expect(Wrapper.find(NativeSelect)).to.have.length(1);
   });
 });

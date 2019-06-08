@@ -1,14 +1,26 @@
-import * as React from 'react';
+import 'jsdom-global/register';
+import React from 'react';
+import Enzyme, { shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import { expect } from 'chai';
 import { OrderBy } from '../OrderBy';
-import { mount } from 'enzyme';
+import { NativeSelect } from '@material-ui/core';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('OrderBy', () => {
   it('should render component', () => {
-    const MountedOrderBy = mount(
+    const Wrapper = shallow(
       <OrderBy />,
     );
-    const expected = MountedOrderBy.exists();
-    const result = true;
-    expect(expected).toEqual(result);
+    const expected = Wrapper.exists();
+    expect(expected).toBeTruthy();
+  });
+
+  it('should have NativeSelect as a child', () => {
+    const Wrapper = shallow(
+      <OrderBy />,
+    );
+    expect(Wrapper.find(NativeSelect)).to.have.length(1);
   });
 });

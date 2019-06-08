@@ -20,28 +20,28 @@ const useStyles = makeStyles(theme => ({
 }));
 
 /**
- * A description explaining what we use this component for
+ * This component is used to display label and value details. if rating is true
+ * then value will display as star icons
  *
  * @returns {*} a React Stateless Functional Component
  */
-export const LabelValueCell = (props) => {
-
+export const LabelValueCell = ({ label, value, stars, rating }) => {
   const classes = useStyles();
+
   return (
     <div>
       <label className={classes.label}>
-        {props.label}
+        {label}
       </label>
       {
-        props.rating ?
+        rating ?
           <Rating
-            rating={props.rating}
-            stars={props.stars}
-          />
-        :
-        <div className={classes.value}>
-          {props.value}
-        </div>
+            rating={rating}
+            stars={stars}
+          /> :
+          <div className={classes.value}>
+            {value}
+          </div>
       }
     </div>
   );
@@ -50,9 +50,13 @@ export const LabelValueCell = (props) => {
 LabelValueCell.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
+  rating: PropTypes.bool,
+  stars: PropTypes.number,
 };
 
 LabelValueCell.defaultProps = {
   label: '',
   value: '',
+  rating: false,
+  stars: 0,
 };

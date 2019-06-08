@@ -1,40 +1,53 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import Icon from '@material-ui/core/Icon';
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles(theme => ({
-  icon: {
-    fontSize: 16,
-  },
-}));
+const useStyles = makeStyles(
+  () => ({
+    icon: {
+      fontSize: 16,
+    },
+  }),
+);
+
+export const starsArray = [1, 2, 3, 4, 5];
 
 /**
- * A description explaining what we use this component for
+ * This component is used to display rating stars based on the length and stars
+ * count. if the length is 5 and stars is 4 then it will fill 4 stars and and 1
+ * star will be empty
  *
- * @param {*} props - a descriptions of what props is
+ * @param {number} stars - stars value from the response
  * @returns {*} a React Stateless Functional Component
  */
-export const Rating = props => {
+export const Rating = ({ stars }) => {
   const classes = useStyles();
   return (
     <div>
       {
-        Array.from({ length: 5 }, (item, index) => (
+        starsArray.map((item, index) => (
           <Icon
-            color={index < props.stars ?
-              '' :
-              'disabled'
-            }
-            className={classes.icon}>
-            star
             key={item}
+            color={
+              index < stars ?
+                'inherit' :
+                'disabled'
+            }
+            className={classes.icon}
+          >
+            star
           </Icon>
         ))
       }
     </div>
   );
-}
+};
 
-Rating.propTypes = {};
+Rating.propTypes = {
+  stars: PropTypes.number,
+};
 
-Rating.defaultProps = {};
+Rating.defaultProps = {
+  stars: 0,
+};

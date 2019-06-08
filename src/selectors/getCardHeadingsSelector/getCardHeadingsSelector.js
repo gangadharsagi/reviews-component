@@ -6,7 +6,8 @@ import { getGroupByTimeHelper } from '../../helpers/getGroupByTimeHelper';
 import { SORTING } from '../../constants/SORTING';
 
 /**
- * A description explaining what data we are getting and where we are using it.
+ * This selector is used to get the review card heading based on type of the
+ * grouping, type of the sorting
  */
 export const getCardHeadingsSelector = createSelector(
   [
@@ -20,14 +21,9 @@ export const getCardHeadingsSelector = createSelector(
     order,
   ) => {
     const data = Object.keys(getGroupByTimeHelper(filteredData, group));
-    if (order === SORTING.MOST_OLDEST) {
-      return data.reverse();
-    }
 
-    if (order === SORTING.MOST_RECENT) {
-      return data;
-    }
-
-    return data;
-  },
+    return order === SORTING.MOST_OLDEST ?
+      data.reverse() :
+      data;
+  }
 );

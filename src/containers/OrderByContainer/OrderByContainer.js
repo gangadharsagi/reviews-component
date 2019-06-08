@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import { orderReviews } from '../../actions';
 import { OrderBy } from '../../components/OrderBy';
+import { orderBySelector } from '../../selectors/orderBySelector';
 
 export const mapStateToProps = (state) => ({
-  order: state.order,
+  order: orderBySelector(state),
 });
 
 export const mapDispatchToProps = (dispatch) => ({

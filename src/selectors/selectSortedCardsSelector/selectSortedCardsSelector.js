@@ -5,7 +5,7 @@ import { orderBySelector } from '../orderBySelector';
 import { SORTING } from '../../constants/SORTING';
 
 /**
- * A description explaining what data we are getting and where we are using it.
+ * This selector is used to sort the reviews by most recent and oldest
  */
 export const selectSortedCardsSelector = createSelector(
   [
@@ -17,5 +17,4 @@ export const selectSortedCardsSelector = createSelector(
     order,
     ) => order === SORTING.MOST_OLDEST ? sortBy(filteredData, 'reviewCreated') :
     sortBy(filteredData, 'reviewCreated').reverse()
-  ,
 );

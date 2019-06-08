@@ -1,47 +1,45 @@
-import { getGetFilteredDataByStars, getFilteredDataByStarsSelector } from '../getFilteredDataByStarsSelector';
-
-describe('getGetFilteredDataByStars', () => {
-  it('should select data from the store state', () => {
-    const mockState = {
-      mockParam: {
-        mockData: 'mockString',
-      },
-    };
-    const expected = getGetFilteredDataByStars(mockState);
-    const result = 'mockString';
-    expect(expected).toEqual(result);
-  });
-  it('should provide a default value if there is no value in the store', () => {
-    const mockState = {
-      mockParam: {
-        mockData: 'mockString',
-      },
-    };
-    const expected = getGetFilteredDataByStars(mockState);
-    const result = '';
-    expect(expected).toEqual(result);
-  });
-});
+import { getFilteredDataByStarsSelector } from '../getFilteredDataByStarsSelector';
 
 describe('getFilteredDataByStarsSelector', () => {
   it('should select data from the store state', () => {
     const mockState = {
-      mockParam: {
-        mockData: 'mockString',
-      },
+      reviews: [
+        {
+          reviewId: 'R1SQ32067PGIK5',
+          stars: 5,
+          reviewCreated: 1517961600000,
+          productImg: '61YqZpvCyaL',
+        },
+        {
+          reviewId: 'R167JDRHY8RJTU',
+          stars: 2,
+          reviewCreated: 1517011200000,
+          productImg: '61YqZpvCyaL',
+        },
+        {
+          reviewId: 'R1V342AML5YST2',
+          stars: 3,
+          reviewCreated: 1516924800000,
+          productImg: '61YqZpvCyaL',
+        },
+      ],
+      filter: {
+        5: true,
+      }
     };
     const expected = getFilteredDataByStarsSelector(mockState);
-    const result = 'mockString';
+    const result = [{
+        reviewId: 'R1SQ32067PGIK5',
+        stars: 5,
+        reviewCreated: 1517961600000,
+        productImg: '61YqZpvCyaL',
+      }];
     expect(expected).toEqual(result);
   });
   it('should provide a default value if there is no value in the store', () => {
-    const mockState = {
-      mockParam: {
-        mockData: 'mockString',
-      },
-    };
+    const mockState = {};
     const expected = getFilteredDataByStarsSelector(mockState);
-    const result = '';
+    const result = [];
     expect(expected).toEqual(result);
   });
 });

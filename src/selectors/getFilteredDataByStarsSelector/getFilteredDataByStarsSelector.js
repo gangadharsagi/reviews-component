@@ -5,7 +5,8 @@ import { filterByStarsSelector } from '../filterByStarsSelector';
 import { getReviewsSelector } from '../getReviewsSelector';
 
 /**
- * A description explaining what data we are getting and where we are using it.
+ * This selector is used to filters the reviews by using filtered values in the
+ * store
  */
 export const getFilteredDataByStarsSelector = createSelector(
   [

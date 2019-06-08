@@ -3,45 +3,9 @@ import * as PropTypes from 'prop-types';
 import InputLabel from '@material-ui/core/InputLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import FormControl from '@material-ui/core/FormControl';
-import { makeStyles, withStyles } from '@material-ui/core';
-import InputBase from '@material-ui/core/InputBase';
+import { makeStyles } from '@material-ui/core';
 import { SORTING } from '../../constants/SORTING';
-
-const BootstrapInput = withStyles(theme => ({
-  root: {
-    'label + &': {
-      marginTop: theme.spacing(3),
-    },
-  },
-  input: {
-    borderRadius: 4,
-    position: 'relative',
-    backgroundColor: theme.palette.background.paper,
-    border: '1px solid #ced4da',
-    fontSize: 14,
-    width: 'auto',
-    padding: '10px 26px 10px 12px',
-    transition: theme.transitions.create(['border-color', 'box-shadow']),
-    // Use the system font instead of the default Roboto font.
-    fontFamily: [
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
-    '&:focus': {
-      borderRadius: 4,
-      borderColor: '#80bdff',
-      boxShadow: '0 0 0 0.2rem rgba(0,123,255,.25)',
-    },
-  },
-}))(InputBase);
+import { BootstrapInput } from '../styledComponents/BootstrapInput';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -60,29 +24,37 @@ const useStyles = makeStyles(theme => ({
 }));
 
 /**
- * A description explaining what we use this component for
+ * This component is used to show reviews in most recent order or
+ * most oldest order
  *
- * @param {*} props - a descriptions of what props is
+ * @param {string} order - value for sorting the reviews
+ * @param {func} handleChange - is used to update the order value
  * @returns {*} a React Stateless Functional Component
  */
-export const OrderBy = props => {
+export const OrderBy = ({ order, handleChange }) => {
   const classes = useStyles();
   return (
     <FormControl className={classes.margin}>
       <InputLabel htmlFor="group">Order By</InputLabel>
       <NativeSelect
-        value={props.order}
-        onChange={props.handleChange}
+        value={order}
+        onChange={handleChange}
         input={<BootstrapInput name="order" id="group-native-simple" />}
       >
-        <option value='' />
-        <option value={SORTING.MOST_OLDEST}>Ascending</option>
-        <option value={SORTING.MOST_RECENT}>Descending</option>
+        <option value="">Order By</option>
+        <option value={SORTING.MOST_OLDEST}>Most Oldest</option>
+        <option value={SORTING.MOST_RECENT}>Most Recent</option>
       </NativeSelect>
-  </FormControl>
-  )
-}
+    </FormControl>
+  );
+};
 
-OrderBy.propTypes = {};
+OrderBy.propTypes = {
+  order: PropTypes.string,
+  handleChange: PropTypes.func,
+};
 
-OrderBy.defaultProps = {};
+OrderBy.defaultProps = {
+  order: undefined,
+  handleChange: () => {},
+};
