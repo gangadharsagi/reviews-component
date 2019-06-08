@@ -1,9 +1,4 @@
-import { 
-  API_START, 
-  API_END, 
-  ACCESS_DENIED, 
-  API_ERROR 
-} from '../constants/constants';
+import { API_START, API_END, ACCESS_DENIED, API_ERROR } from '../../constants/constants';
 
 export const apiStart = label => ({
   type: API_START,

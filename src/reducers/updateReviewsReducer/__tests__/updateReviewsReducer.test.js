@@ -1,30 +1,30 @@
-import reducer from './index';
-import * as types from '../constants/constants';
-import { INITIAL_STATE } from '../constants/INITIAL_STATE';
-import { GROUP_TYPES } from '../constants/GROUP_TYPES';
+import { updateReviewsReducer } from '../updateReviewsReducer';
+import * as types from '../../../constants/constants';
+import { INITIAL_STATE } from '../../../constants/INITIAL_STATE';
+import { GROUP_TYPES } from '../../../constants/GROUP_TYPES';
 
-describe('Survey reducer', () => {
+describe('updateReviews reducer', () => {
   it('should handle initial state', () => {
-    expect(reducer(undefined, {})).toEqual(INITIAL_STATE)
+    expect(updateReviewsReducer(undefined, {})).toEqual(INITIAL_STATE)
   });
 
   it('should handle API_START', () => {
     const action = { type: types.API_START, payload: 'GET_REVIEWS' };
-    expect(reducer([], action)).toEqual(
+    expect(updateReviewsReducer([], action)).toEqual(
       { isFetchingData: true }
     )
   });
 
   it('should handle API_END', () => {
     const action = { type: types.API_END, payload: 'GET_REVIEWS' };
-    expect(reducer([], action)).toEqual(
+    expect(updateReviewsReducer([], action)).toEqual(
       { isFetchingData: false }
     )
   });
 
   it('should handle UPDATE_REVIEWS', () => {
     expect(
-      reducer({reviews: []}, {
+      updateReviewsReducer({reviews: []}, {
         type: types.UPDATE_REVIEWS,
         reviews: {
           reviews: [
@@ -53,7 +53,7 @@ describe('Survey reducer', () => {
     );
 
     expect(
-      reducer(
+      updateReviewsReducer(
         {
           hasMore: true,
           reviews: [
@@ -103,7 +103,7 @@ describe('Survey reducer', () => {
 
   it('should handle ORDER_REVIEWS', () => {
     expect(
-      reducer({order: ''}, {
+      updateReviewsReducer({order: ''}, {
         type: types.ORDER_REVIEWS,
         order: '1'
       })
@@ -116,7 +116,7 @@ describe('Survey reducer', () => {
 
   it('should handle GROUP_REVIEWS', () => {
     expect(
-      reducer([], {
+      updateReviewsReducer([], {
         type: types.GROUP_REVIEWS,
         group: GROUP_TYPES.DAY,
       })
@@ -129,7 +129,7 @@ describe('Survey reducer', () => {
 
   it('should handle FILTER_REVIEWS', () => {
     expect(
-      reducer([], {
+      updateReviewsReducer([], {
         type: types.FILTER_REVIEWS,
         filter: {
           1: true,

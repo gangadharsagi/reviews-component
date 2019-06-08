@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { API } from '../constants/constants';
-import { accessDenied, apiError, apiStart, apiEnd } from '../actions/api';
+import { accessDenied, apiError, apiStart, apiEnd } from '../actions/apiActions/apiActions';
 
 const apiMiddleware = ({dispatch}) => next => action => {
   next(action);

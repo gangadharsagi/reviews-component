@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { InfiniteScrollReview } from '../../components/InfiniteScrollReview';
 import { getReviewsSelector } from '../../selectors/getReviewsSelector';
 import { hasMoreSelector } from '../../selectors/hasMoreSelector';
-import { fetchReviews } from '../../actions';
+import { fetchReviews } from '../../actions/commonActions/commonActions';
 import { groupBySelector } from '../../selectors/groupBySelector';
 
 export const mapStateToProps = (state) => ({

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { FilterBy } from '../../components/FilterBy';
-import { filterReviews } from '../../actions';
+import { filterReviews } from '../../actions/commonActions/commonActions';
 import { starCheckedParamSelector } from '../../selectors/starCheckedParamSelector';
 
 export const mapStateToProps = (state) => ({

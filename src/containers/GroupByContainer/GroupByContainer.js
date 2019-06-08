@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { groupReviews } from '../../actions';
+import { groupReviews } from '../../actions/commonActions/commonActions';
 import { GroupBy } from '../../components/GroupBy';
 import { groupBySelector } from '../../selectors/groupBySelector';
 

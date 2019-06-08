@@ -6,10 +6,10 @@ import {
   ORDER_REVIEWS,
   GROUP_REVIEWS,
   GET_REVIEWS,
-} from '../constants/constants';
-import { INITIAL_STATE } from '../constants/INITIAL_STATE';
+} from '../../constants/constants';
+import { INITIAL_STATE } from '../../constants/INITIAL_STATE';
 
-export const updateReviews = (state =  INITIAL_STATE, action) => {
+export const updateReviewsReducer = (state =  INITIAL_STATE, action) => {
   switch (action.type) {
     case API_START:
       if (action.payload === GET_REVIEWS) {
@@ -18,7 +18,7 @@ export const updateReviews = (state =  INITIAL_STATE, action) => {
           isFetchingData: true
         };
       }
-    break;
+      break;
     case API_END:
       if (action.payload === GET_REVIEWS) {
         return {
@@ -26,7 +26,7 @@ export const updateReviews = (state =  INITIAL_STATE, action) => {
           isFetchingData: false
         };
       }
-    break;
+      break;
     case UPDATE_REVIEWS:
       return {
         ...state,
@@ -55,5 +55,3 @@ export const updateReviews = (state =  INITIAL_STATE, action) => {
       return state
   }
 };
-
-export default updateReviews;

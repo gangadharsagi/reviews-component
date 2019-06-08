@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { orderReviews } from '../../actions';
+import { orderReviews } from '../../actions/commonActions/commonActions';
 import { OrderBy } from '../../components/OrderBy';
 import { orderBySelector } from '../../selectors/orderBySelector';
 
