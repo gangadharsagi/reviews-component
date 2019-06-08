@@ -25,7 +25,7 @@ export const fetchReviews = (pageNumber) => (
   apiAction({
     url: `https://cors-anywhere.herokuapp.com/https://sellics-frontend-test.herokuapp.com/reviews/${pageNumber}`,
     onSuccess: updateReviews,
-    onFailure: console.log('Error occured loading articles'),
+    onFailure: console.log('Error occured loading items'),
     label: GET_REVIEWS,
   })
 );

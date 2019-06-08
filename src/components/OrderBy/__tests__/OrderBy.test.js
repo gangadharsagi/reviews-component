@@ -1,8 +1,7 @@
-import 'jsdom-global/register';
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { expect } from 'chai';
+
 import { OrderBy } from '../OrderBy';
 import { NativeSelect } from '@material-ui/core';
 
@@ -21,6 +20,6 @@ describe('OrderBy', () => {
     const Wrapper = shallow(
       <OrderBy />,
     );
-    expect(Wrapper.find(NativeSelect)).to.have.length(1);
+    expect(Wrapper.find(NativeSelect)).toHaveLength(1);
   });
 });

@@ -1,8 +1,6 @@
-import 'jsdom-global/register';
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { expect } from 'chai';
 import { ReviewDetails } from '../ReviewDetails';
 import { LabelValueCell } from '../../LabelValueCell';
 
@@ -42,6 +40,6 @@ describe('ReviewDetails', () => {
     const Wrapper = shallow(
       <ReviewDetails {...mockProps}/>,
     );
-    expect(Wrapper.find(LabelValueCell)).to.have.length(3);
+    expect(Wrapper.find(LabelValueCell)).toHaveLength(3);
   });
 });

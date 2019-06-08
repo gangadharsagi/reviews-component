@@ -1,3 +1,4 @@
+// TODO doc block
 export const GROUP_TYPES = {
   'DAY': 'day',
   'WEEK': 'week',

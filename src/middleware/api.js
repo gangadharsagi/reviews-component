@@ -2,6 +2,7 @@ import axios from 'axios';
 import { API } from '../constants/constants';
 import { accessDenied, apiError, apiStart, apiEnd } from '../actions/apiActions/apiActions';
 
+// TODO api middle ware
 const apiMiddleware = ({dispatch}) => next => action => {
   next(action);
 
@@ -22,7 +23,8 @@ const apiMiddleware = ({dispatch}) => next => action => {
   // axios default configs
   axios.defaults.baseURL = process.env.REACT_APP_BASE_URL || '';
   axios.defaults.headers.common['Content-Type'] = 'application/json';
-  axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+  // TODO
+  // axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 
   if (label) {
     dispatch(apiStart(label));

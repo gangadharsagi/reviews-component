@@ -1,7 +1,5 @@
-import 'jsdom-global/register';
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
-import { expect } from 'chai';
 import Adapter from 'enzyme-adapter-react-16';
 import { GroupAndOrderBy } from '../GroupAndOrderBy';
 import { GroupByContainer } from '../../../containers/GroupByContainer';
@@ -23,13 +21,13 @@ describe('GroupAndOrderBy', () => {
     const Wrapper = shallow(
       <GroupAndOrderBy />,
     );
-    expect(Wrapper.find(GroupByContainer)).to.have.length(1);
+    expect(Wrapper.find(GroupByContainer)).toHaveLength(1);
   });
 
   it('should have OrderByContainer as a child', () => {
     const Wrapper = shallow(
       <GroupAndOrderBy />,
     );
-    expect(Wrapper.find(OrderByContainer)).to.have.length(1);
+    expect(Wrapper.find(OrderByContainer)).toHaveLength(1);
   });
 });

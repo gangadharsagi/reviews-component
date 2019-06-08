@@ -1,8 +1,7 @@
-import 'jsdom-global/register';
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { expect } from 'chai';
+
 import { GroupReviewDetails } from '../GroupReviewDetails';
 import { ReviewDetails } from '../../ReviewDetails';
 
@@ -43,6 +42,6 @@ describe('GroupReviewDetails', () => {
     const Wrapper = shallow(
       <GroupReviewDetails {...mockProps}/>,
     );
-    expect(Wrapper.find(ReviewDetails)).to.have.length(1);
+    expect(Wrapper.find(ReviewDetails)).toHaveLength(1);
   });
 });

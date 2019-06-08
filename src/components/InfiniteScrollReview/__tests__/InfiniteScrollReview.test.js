@@ -1,10 +1,8 @@
-import 'jsdom-global/register';
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { InfiniteScrollReview } from '../InfiniteScrollReview';
-import { expect } from 'chai';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -24,6 +22,6 @@ describe('InfiniteScrollReview', () => {
     const Wrapper = shallow(
       <InfiniteScrollReview {...mockProps}/>,
     );
-    expect(Wrapper.find(InfiniteScroll)).to.have.length(1);
+    expect(Wrapper.find(InfiniteScroll)).toHaveLength(1);
   });
 });

@@ -9,7 +9,7 @@ import {
 } from '../../constants/constants';
 import { INITIAL_STATE } from '../../constants/INITIAL_STATE';
 
-export const updateReviewsReducer = (state =  INITIAL_STATE, action) => {
+export const updateReviewsReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case API_START:
       if (action.payload === GET_REVIEWS) {

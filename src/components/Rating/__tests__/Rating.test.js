@@ -1,9 +1,8 @@
-import 'jsdom-global/register';
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { Rating } from '../Rating';
-import { expect } from 'chai';
+
 import { Icon } from '@material-ui/core';
 
 Enzyme.configure({ adapter: new Adapter() });
@@ -21,6 +20,6 @@ describe('Rating', () => {
     const Wrapper = shallow(
       <Rating />,
     );
-    expect(Wrapper.find(Icon)).to.have.length(5);
+    expect(Wrapper.find(Icon)).toHaveLength(5);
   });
 });
