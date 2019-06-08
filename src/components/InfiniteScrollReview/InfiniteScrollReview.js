@@ -7,6 +7,7 @@ import { FilterByContainer } from '../../containers/FilterByContainer';
 import { GroupReviewDetailsContainer } from '../../containers/GroupReviewDetailsContainer';
 import { ReviewDetailsContainer } from '../../containers/ReviewDetailsContainer';
 import './infinite-scroll-review.css';
+import { RefreshButton } from '../RefreshButton';
 
 /**
  * This component is used for Grouping, Sorting, Filtering and loading the
@@ -40,6 +41,7 @@ export class InfiniteScrollReview extends React.Component {
       <div className={'wrapper'}>
         <GroupAndOrderBy />
         <FilterByContainer />
+        <RefreshButton />
         <InfiniteScroll
           dataLength={this.props.reviews.length}
           next={this.fetchMoreData}
