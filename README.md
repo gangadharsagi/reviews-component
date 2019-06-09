@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/gangadharsagi/reviews-component.svg?style=svg)](https://circleci.com/gh/gangadharsagi/reviews-component)
+
 # InfiniteScrollReview (React, Redux)
 
 ### Set Up
