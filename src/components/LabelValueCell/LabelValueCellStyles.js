@@ -14,4 +14,7 @@ export const LabelValueCellStyles = makeStyles(theme => ({
     lineHeight: 1,
     fontWeight: 'bold',
   },
+  item: {
+    width: '30%',
+  }
 }));

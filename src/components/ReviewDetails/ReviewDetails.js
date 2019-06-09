@@ -29,11 +29,13 @@ export const ReviewDetails = ({ cards }) => {
                   className={classes.card}>
                     <CardContent>
                         <div className={classes.cardContainer}>
-                            <img
-                              className={classes.logo}
-                              alt='logo'
-                              src={getProductImageHelper(item)}
-                            />
+                            <div className={classes.item}>
+                                <img
+                                  className={classes.logo}
+                                  alt='logo'
+                                  src={getProductImageHelper(item)}
+                                />
+                            </div>
                             <LabelValueCell
                               label='DATE'
                               value={moment(get(item, 'reviewCreated', ''))

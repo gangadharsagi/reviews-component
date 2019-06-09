@@ -13,7 +13,7 @@ export const LabelValueCell = ({ label, value, stars, rating }) => {
   const classes = LabelValueCellStyles();
 
   return (
-    <div>
+    <div className={classes.item}>
       <label className={classes.label}>
         {label}
       </label>

@@ -16,8 +16,8 @@ body {
   text-align: center;
 }
 .logo {
-  width: 100px;
+  width: 120px;
   height: 30px;
   margin-left: 8px;
-  background-color: #FBFBFB;
+  margin-bottom: 30px;
 }

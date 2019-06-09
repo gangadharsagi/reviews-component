@@ -15,7 +15,7 @@ export const ReviewDetailsStyles = makeStyles(theme => ({
     justifyContent: 'space-between',
     flexDirection: 'row',
     marginBottom: 10,
-    width: '80%',
+    width: '90%',
   },
   title: {
     fontSize: 14,
@@ -29,4 +29,7 @@ export const ReviewDetailsStyles = makeStyles(theme => ({
     width: 40,
     height: 40,
   },
+  item: {
+    width: '10%',
+  }
 }));
