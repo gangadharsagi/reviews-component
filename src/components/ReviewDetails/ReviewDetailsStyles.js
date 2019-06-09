@@ -21,8 +21,9 @@ export const ReviewDetailsStyles = makeStyles(theme => ({
     fontSize: 14,
     fontWeight: 'bold',
   },
-  grey: {
+  content: {
     color: 'grey',
+    fontSize: 14,
   },
   logo: {
     width: 40,

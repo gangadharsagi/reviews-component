@@ -50,7 +50,7 @@ export const ReviewDetails = ({ cards }) => {
                             />
                         </div>
                         <label className={classes.title}>{get(item, 'title', '')}</label>
-                        <p className='grey'>
+                        <p className={classes.content}>
                             {get(item, 'content', '')}
                         </p>
                     </CardContent>
