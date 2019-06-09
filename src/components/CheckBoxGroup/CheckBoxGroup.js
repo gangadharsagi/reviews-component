@@ -11,7 +11,7 @@ import { CheckBoxGroupStyles } from './CheckBoxGroupStyles';
  *  store
  * @param {value} value - checkBox value
  * @param {boolean} checked - is used to check and uncheck the checkbox
- * @param {number} label - text for the checkbox
+ * @param {string} label - text for the checkbox
  * @returns {*} a React Stateless Functional Component
  */
 export const CheckBoxGroup = ({

@@ -5,7 +5,7 @@ describe('apiStartReducer', () => {
     const mockState = {};
     const mockPayload = 'GET_REVIEWS';
     const expected = apiStartReducer(mockState, mockPayload);
-    const result = { isFetchingData: false };
+    const result = { isFetchingData: true };
     expect(expected).toEqual(result);
   });
 });

@@ -31,31 +31,31 @@ export const FilterBy = ({
           checked={checked1}
           handleCheckBoxChange={handleCheckBoxChange('1')}
           value='checked1'
-          label={1}
+          label='1'
         />
         <CheckBoxGroup
           checked={checked2}
           handleCheckBoxChange={handleCheckBoxChange('2')}
           value='checked2'
-          label={2}
+          label='2'
         />
         <CheckBoxGroup
           checked={checked3}
           handleCheckBoxChange={handleCheckBoxChange('3')}
           value='checked3'
-          label={3}
+          label='3'
         />
         <CheckBoxGroup
           checked={checked4}
           handleCheckBoxChange={handleCheckBoxChange('4')}
           value='checked4'
-          label={4}
+          label='4'
         />
         <CheckBoxGroup
           checked={checked5}
           handleCheckBoxChange={handleCheckBoxChange('5')}
           value='checked5'
-          label={5}
+          label='5'
         />
       </FormGroup>
     );
