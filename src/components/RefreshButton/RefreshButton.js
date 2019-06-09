@@ -19,7 +19,7 @@ export const RefreshButton = ({ onClick }) => {
         className={classes.margin}
         onClick={onClick}
       >
-        refresh
+        REFRESH
       </ColorButton>
     </div>
   );

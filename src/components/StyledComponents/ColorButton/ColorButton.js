@@ -16,7 +16,4 @@ export const ColorButton = withStyles((theme) => ({
       backgroundColor: '#2099C3',
     },
   },
-  span: {
-    textTransform: 'capitalize',
-  },
 }))(Button);
