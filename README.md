@@ -26,26 +26,26 @@ I have created the application with create react app, and below is the pattern f
 each component is independent of each other and can be reused wherever it require with custom data .
 - I have used material UI as a wrapper and customised according to the mock up.
 
-#####Containers
+##### Containers
 - Components are wrapped with containers to get the redux state and actions as props.
 - Followed the styled components pattern.
 
-#####Actions
+##### Actions
 - Actions are plain javascript objects with TYPE property in it, actions will be dispatched based on user interactions with application.
 
-#####Reducers 
+##### Reducers 
 - Reducers are pure functions which will take action object as input parameters and will update the redux state accordingly.
 - I created the individual reducers for each action to make TDD approach and to make it more readable.
 
-#####Selectors
+##### Selectors
 - Selectors can compute derived data, allowing Redux to store the minimal possible state.
 - Selectors are efficient. A selector is not recomputed unless one of its arguments changes.
 - Selectors are composable. They can be used as input to other selectors
 
-#####Helpers 
+##### Helpers 
 - Helpers are pure functions, which will calculate the new value and returns it based on input parameters.
 
-#####Constants 
+##### Constants 
 - Constants are used to define the STATIC DATA in your application.
 
 ##### Custom Middleware
