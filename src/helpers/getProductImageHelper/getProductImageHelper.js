@@ -9,5 +9,5 @@ import get from 'lodash/get';
  */
 export const getProductImageHelper = (item) => {
   const productImg = get(item, 'productImg', '');
-  return `https://images-na.ssl-images-amazon.com/images/I/${productImg}._CR412,0,1060,1060_UX50.jpg`;
+  return `https://images-na.ssl-images-amazon.com/images/I/${productImg}._CR412,0,1060,1060_UX100.jpg`;
 };

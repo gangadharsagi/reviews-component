@@ -5,9 +5,9 @@
 ### Setup
 Below are the steps to get it running.
 
-1.  yarn  Installs all the dependencies.
-2.  yarn start  Starts the application.
-3.  yarn test  Run all the tests using the test command (optional step)
+1. `yarn`  Installs all the dependencies.
+2. `yarn start`  Starts the application.
+3. `yarn test`  Run all the tests using the test command (optional step)
 
 Once the server is up the site will be available at `http://localhost:3000/`
 
