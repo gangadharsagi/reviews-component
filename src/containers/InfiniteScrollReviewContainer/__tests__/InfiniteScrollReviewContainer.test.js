@@ -4,7 +4,7 @@ describe('InfiniteScrollReviewContainer', () => {
   it('should map the state to props', () => {
     const mockState = {};
     const expected = mapStateToProps(mockState);
-    const result = ['reviews', 'hasMore', 'group'];
+    const result = ['reviews', 'hasMore', 'group', 'pageNumber'];
     expect(Object.keys(expected)).toEqual(result);
   });
   it('should map dispatch to props', () => {

@@ -6,8 +6,9 @@ import { GroupAndOrderBy } from '../GroupAndOrderBy';
 import { FilterByContainer } from '../../containers/FilterByContainer';
 import { GroupReviewDetailsContainer } from '../../containers/GroupReviewDetailsContainer';
 import { ReviewDetailsContainer } from '../../containers/ReviewDetailsContainer';
+import { RefreshButtonContainer } from '../../containers/RefreshButtonContainer';
+import mySvg from '../../assets/sellics-logo.svg';
 import './infinite-scroll-review.css';
-import { RefreshButton } from '../RefreshButton';
 
 /**
  * This component is used for Grouping, Sorting, Filtering and loading the
@@ -20,41 +21,41 @@ import { RefreshButton } from '../RefreshButton';
  */
 export class InfiniteScrollReview extends React.Component {
 
-  state = {
-    pageNumber: 1
-  };
-
   componentDidMount() {
-    this.props.fetchReviewItems(this.state.pageNumber);
+    this.props.fetchReviewItems(this.props.pageNumber);
   }
 
   /**
    * This function is used to fetch more records from the server.
    */
   fetchMoreData = () => {
-    this.props.fetchReviewItems(this.state.pageNumber + 1);
-    this.setState({
-      pageNumber: this.state.pageNumber + 1,
-    });
+    this.props.fetchReviewItems(this.props.pageNumber + 1);
   };
 
   render() {
+    const { reviews, hasMore, group } = this.props;
   return (
     <div className='container'>
-      <div className={'wrapper'}>
+      <div className='wrapper'>
+        <div className='logo'>
+          <img
+            src={mySvg}
+            alt='logo'
+          />
+        </div>
         <GroupAndOrderBy />
         <FilterByContainer />
-        <RefreshButton />
+        <RefreshButtonContainer />
         <InfiniteScroll
-          dataLength={this.props.reviews.length}
+          dataLength={reviews.length}
           next={this.fetchMoreData}
-          hasMore={this.props.hasMore}
+          hasMore={hasMore}
           loader={<h4 className='text-center'>Loading...</h4>}
           endMessage={<h4 className='text-center'>No More Results</h4>}
           className='infinite-scroll'
         >
           {
-            isEmpty(this.props.group) ?
+            isEmpty(group) ?
               <ReviewDetailsContainer /> :
               <GroupReviewDetailsContainer />
           }

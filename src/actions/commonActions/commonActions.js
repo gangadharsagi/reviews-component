@@ -1,4 +1,12 @@
-import { UPDATE_REVIEWS, FILTER_REVIEWS, ORDER_REVIEWS, GROUP_REVIEWS, GET_REVIEWS } from '../../constants/CONSTANTS';
+import {
+  UPDATE_REVIEWS,
+  FILTER_REVIEWS,
+  ORDER_REVIEWS,
+  GROUP_REVIEWS,
+  GET_REVIEWS,
+  RESET_REVIEWS,
+  UPDATE_PAGE_NUMBER
+} from '../../constants/CONSTANTS';
 import { CONFIG } from '../../constants/CONFIG';
 import { apiActionHelper } from '../../helpers/apiActionHelper';
 
@@ -44,6 +52,26 @@ export const orderReviews = payload => ({
 export const groupReviews = payload => ({
   type: GROUP_REVIEWS,
   payload,
+});
+
+/**
+ * This action is used to update the the page number in the store
+ *
+ * @param {string} payload - selected groupBy value
+ * @returns {{type: string, group: string}}
+ */
+export const updatePageNumber = payload => ({
+  type: UPDATE_PAGE_NUMBER,
+  payload,
+});
+
+/**
+ * This action is used to clear the reviews from the store
+ *
+ * @returns {{type: string, group: string}}
+ */
+export const resetReviews = () => ({
+  type: RESET_REVIEWS,
 });
 
 /**

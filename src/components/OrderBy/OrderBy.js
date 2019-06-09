@@ -23,7 +23,7 @@ export const OrderBy = ({ order, handleChange }) => {
       <NativeSelect
         value={order}
         onChange={handleChange}
-        input={<BootstrapInput name="order" id="group-native-simple" />}
+        input={<BootstrapInput name="order" id="order-native-simple" />}
       >
         <option value="">Order By</option>
         <option value={SORTING.MOST_OLDEST}>Most Oldest</option>

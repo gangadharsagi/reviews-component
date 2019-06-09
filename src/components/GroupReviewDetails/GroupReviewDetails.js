@@ -2,6 +2,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { ReviewDetails } from '../ReviewDetails';
 import { getCardHeadingHelper } from '../../helpers/getCardHeadingHelper';
+import { GroupReviewDetailsStyles } from './GroupReviewDetailsStyles';
 
 /**
  * This component is used to display the review component with heading
@@ -13,14 +14,16 @@ import { getCardHeadingHelper } from '../../helpers/getCardHeadingHelper';
  * @param {array} group - type of the grouping
  * @returns {*} a React Stateless Functional Component
  */
-export const GroupReviewDetails = ({ groupedCards, cardHeadings, group }) => (
+export const GroupReviewDetails = ({ groupedCards, cardHeadings, group }) => {
+  const classes = GroupReviewDetailsStyles();
+  return (
     <React.Fragment>
       {
         groupedCards.map((cards, index) => {
           const heading = getCardHeadingHelper(group, cardHeadings, index);
           return (
             <React.Fragment key={heading}>
-              <p>{heading}</p>
+              <p className={classes.margin}>{heading}</p>
               <ReviewDetails
                 cards={cards}
               />
@@ -29,7 +32,8 @@ export const GroupReviewDetails = ({ groupedCards, cardHeadings, group }) => (
         })
       }
     </React.Fragment>
-);
+  );
+}
 
 GroupReviewDetails.propTypes = {
   groupedCards: PropTypes.array,

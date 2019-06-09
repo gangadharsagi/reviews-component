@@ -1,9 +1,9 @@
 /**
- * A small description explaining where this function is used and why
+ * This reducer is used to update the reviews and hasMore value in the store
  *
  * @param {{}} state - the Redux state of the reducer that this function is
  *  used for
- * @param {*} payload - the payload of the action this reducer is attached to
+ * @param {Object} payload - api response from the service
  * @returns {*} the next Redux state
  */
 export const updateReviewReducer = (state, payload) => {

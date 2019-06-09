@@ -8,7 +8,7 @@ export const ReviewDetailsStyles = makeStyles(theme => ({
     minWidth: 275,
     maxWidth: 600,
     padding: 10,
-    marginBottom: 10,
+    margin: theme.spacing(1),
   },
   cardContainer: {
     display: 'flex',

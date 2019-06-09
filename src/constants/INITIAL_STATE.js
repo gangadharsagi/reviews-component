@@ -9,6 +9,7 @@ export const INITIAL_STATE = {
     4: false,
     5: true,
   },
+  pageNumber: 1,
   order: undefined,
   group: undefined,
   hasMore: true,

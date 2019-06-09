@@ -15,6 +15,7 @@ export const selectSortedCardsSelector = createSelector(
   (
     filteredData,
     order,
-    ) => order === SORTING.MOST_OLDEST ? sortBy(filteredData, 'reviewCreated') :
+    ) => order === SORTING.MOST_OLDEST ?
+    sortBy(filteredData, 'reviewCreated') :
     sortBy(filteredData, 'reviewCreated').reverse()
 );

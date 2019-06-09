@@ -14,7 +14,7 @@ export const getFilterByStars = state => get(
 );
 
 /**
- * This selector is used to memorize the value of filte
+ * This selector is used to memorize the value of filter
  */
 export const filterByStarsSelector = createSelector(
   getFilterByStars,

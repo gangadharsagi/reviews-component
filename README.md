@@ -1,4 +1,6 @@
-# InfiniteScrollReview (React, Redux)
+[![CircleCI](https://circleci.com/gh/gangadharsagi/reviews-component.svg?style=svg)](https://circleci.com/gh/gangadharsagi/reviews-component)
+
+# InfiniteScrollReview Component (React, Redux)
 
 ### Set Up
 Below are the steps to get it running.
