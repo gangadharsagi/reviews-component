@@ -3,25 +3,9 @@ import PropTypes from 'prop-types';
 import InputLabel from '@material-ui/core/InputLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import FormControl from '@material-ui/core/FormControl';
-import { makeStyles } from '@material-ui/core';
+import { GroupByStyles } from './GroupByStyles';
 import { GROUP_TYPES } from '../../constants/GROUP_TYPES';
-import { BootstrapInput } from '../styledComponents/BootstrapInput';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  margin: {
-    margin: theme.spacing(1),
-  },
-  icon: {
-    fontSize: 16,
-    position: 'relative',
-    top: 2,
-    left: 2,
-  },
-}));
+import { BootstrapInput } from '../StyledComponents/BootstrapInput';
 
 /**
  * This component is used to show reviews in group format in day ,
@@ -32,7 +16,7 @@ const useStyles = makeStyles(theme => ({
  * @returns {*} a React Stateless Functional Component
  */
 export const GroupBy = ({ group, handleChange }) => {
-  const classes = useStyles();
+  const classes = GroupByStyles();
   return (
     <FormControl className={classes.margin}>
       <InputLabel htmlFor="group-label">Group By</InputLabel>

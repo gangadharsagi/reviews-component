@@ -3,7 +3,8 @@ import get from 'lodash/get';
 import { filterByStarsSelector } from '../filterByStarsSelector';
 
 /**
- * This selector is used to get the filter Object property using param
+ * This selector is used to memorize and filter the filter Object property
+ * using param
  */
 export const starCheckedFactorySelector = (param, defaultValue) =>
   createSelector(

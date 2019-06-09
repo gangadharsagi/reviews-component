@@ -1,26 +1,8 @@
 import * as React from 'react';
 import FormGroup from '@material-ui/core/FormGroup';
-import Checkbox from '@material-ui/core/Checkbox';
-import Icon from '@material-ui/core/Icon';
-import { makeStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { OrderBy } from '../OrderBy';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  margin: {
-    margin: theme.spacing(1),
-  },
-  icon: {
-    fontSize: 16,
-    position: 'relative',
-    top: 2,
-    left: 2,
-  },
-}));
+import { CheckBoxGroup } from '../CheckBoxGroup';
 
 /**
  * This component is used to filter the reviews based on the stars value
@@ -43,79 +25,38 @@ export const FilterBy = ({
   checked4,
   checked5,
 }) => {
-  const classes = useStyles();
     return (
       <FormGroup row>
-        <div className='checkBox-group'>
-          <Checkbox
-            checked={checked1}
-            onChange={handleCheckBoxChange('1')}
-            value="checked1"
-            color="primary"
-          />
-          <label>1</label>
-          <Icon
-            color="disabled"
-            className={classes.icon}>
-            star
-          </Icon>
-        </div>
-        <div className='checkBox-group'>
-          <Checkbox
-            checked={checked2}
-            onChange={handleCheckBoxChange('2')}
-            value="checked2"
-            color="primary"
-          />
-          <label>2</label>
-          <Icon
-            color="disabled"
-            className={classes.icon}>
-            star
-          </Icon>
-        </div>
-        <div className='checkBox-group'>
-          <Checkbox
-            checked={checked3}
-            onChange={handleCheckBoxChange('3')}
-            value="checked3"
-            color="primary"
-          />
-          <label>3</label>
-          <Icon
-            color="disabled"
-            className={classes.icon}>
-            star
-          </Icon>
-        </div>
-        <div className='checkBox-group'>
-          <Checkbox
-            checked={checked4}
-            onChange={handleCheckBoxChange('4')}
-            value="checked4"
-            color="primary"
-          />
-          <label>4</label>
-          <Icon
-            color="disabled"
-            className={classes.icon}>
-            star
-          </Icon>
-        </div>
-        <div className='checkBox-group'>
-          <Checkbox
-            checked={checked5}
-            onChange={handleCheckBoxChange('5')}
-            value="checked5"
-            color="primary"
-          />
-          <label>5</label>
-          <Icon
-            color="disabled"
-            className={classes.icon}>
-            star
-          </Icon>
-        </div>
+        <CheckBoxGroup
+          checked={checked1}
+          handleCheckBoxChange={handleCheckBoxChange('1')}
+          value='checked1'
+          label={1}
+        />
+        <CheckBoxGroup
+          checked={checked2}
+          handleCheckBoxChange={handleCheckBoxChange('2')}
+          value='checked2'
+          label={2}
+        />
+        <CheckBoxGroup
+          checked={checked3}
+          handleCheckBoxChange={handleCheckBoxChange('3')}
+          value='checked3'
+          label={3}
+        />
+        <CheckBoxGroup
+          checked={checked4}
+          handleCheckBoxChange={handleCheckBoxChange('4')}
+          value='checked4'
+          label={4}
+        />
+        <CheckBoxGroup
+          checked={checked5}
+          handleCheckBoxChange={handleCheckBoxChange('5')}
+          value='checked5'
+          label={5}
+        />
       </FormGroup>
     );
 };

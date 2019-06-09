@@ -14,7 +14,7 @@ export const getFilterByStars = state => get(
 );
 
 /**
- * This selector is used to get the value for filter the reviews
+ * This selector is used to memorize the value of filte
  */
 export const filterByStarsSelector = createSelector(
   getFilterByStars,

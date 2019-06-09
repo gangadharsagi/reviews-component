@@ -1,23 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core';
 import { Rating } from '../Rating';
-
-const useStyles = makeStyles(theme => ({
-  label: {
-    textTransform: 'upperCase',
-    position: 'relative',
-    display: 'inline-block',
-    fontSize: 10,
-    color: 'grey',
-  },
-  value: {
-    minHeight: 30,
-    color: 'black',
-    lineHeight: 1,
-    fontWeight: 'bold',
-  },
-}));
+import { LabelValueCellStyles } from './LabelValueCellStyles';
 
 /**
  * This component is used to display label and value details. if rating is true
@@ -26,7 +10,7 @@ const useStyles = makeStyles(theme => ({
  * @returns {*} a React Stateless Functional Component
  */
 export const LabelValueCell = ({ label, value, stars, rating }) => {
-  const classes = useStyles();
+  const classes = LabelValueCellStyles();
 
   return (
     <div>

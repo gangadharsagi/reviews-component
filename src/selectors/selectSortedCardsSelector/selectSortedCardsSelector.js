@@ -5,7 +5,7 @@ import { orderBySelector } from '../orderBySelector';
 import { SORTING } from '../../constants/SORTING';
 
 /**
- * This selector is used to sort the reviews by most recent and oldest
+ * This selector is used to memorize and sort the reviews by most recent and oldest
  */
 export const selectSortedCardsSelector = createSelector(
   [

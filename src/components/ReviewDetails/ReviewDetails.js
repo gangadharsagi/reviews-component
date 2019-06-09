@@ -2,43 +2,13 @@ import * as React from 'react';
 import moment from 'moment';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import { makeStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import { LabelValueCell } from '../LabelValueCell';
 import { getProductImageHelper } from '../../helpers/getProductImageHelper';
 import './review-details.css';
 import { getProductTitleHelper } from '../../helpers/getProductTitleHelper';
-
-const useStyles = makeStyles(theme => ({
-    icon: {
-        fontSize: 16,
-    },
-    card: {
-        minWidth: 275,
-        maxWidth: 600,
-        padding: 10,
-        marginBottom: 10,
-    },
-    cardContainer: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        flexDirection: 'row',
-        marginBottom: 10,
-        width: '80%',
-    },
-    title: {
-        fontSize: 14,
-        fontWeight: 'bold',
-    },
-    grey: {
-        color: 'grey',
-    },
-    logo: {
-        width: 40,
-        height: 40,
-    },
-}));
+import { ReviewDetailsStyles } from './ReviewDetailsStyles';
 
 
 /**
@@ -49,7 +19,7 @@ const useStyles = makeStyles(theme => ({
  * @returns {*} a React Stateless Functional Component
  */
 export const ReviewDetails = ({ cards }) => {
-    const classes = useStyles();
+    const classes = ReviewDetailsStyles();
     return <React.Fragment>
         {
             cards ?
@@ -62,7 +32,7 @@ export const ReviewDetails = ({ cards }) => {
                             <img
                               className={classes.logo}
                               alt='logo'
-                              src={getProductImageHelper(get(item, 'productImg', ''))}
+                              src={getProductImageHelper(item)}
                             />
                             <LabelValueCell
                               label='DATE'

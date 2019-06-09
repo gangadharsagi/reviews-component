@@ -14,7 +14,7 @@ export const getOrderBy = state => get(
 );
 
 /**
- * This selector is used to get the order value from the store
+ * This selector is used to memorize the order value from the store
  */
 export const orderBySelector = createSelector(
   getOrderBy,

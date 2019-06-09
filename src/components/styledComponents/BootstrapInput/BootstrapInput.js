@@ -2,10 +2,9 @@ import { withStyles } from '@material-ui/core';
 import InputBase from '@material-ui/core/InputBase';
 
 /**
- * A description explaining what we use this component for
+ * This component is used to create custom input for Native Select
  *
- * @param {*} props - a descriptions of what props is
- * @returns {*} a React Stateless Functional Component
+ * @returns {*} a React Stateless Component
  */
 export const BootstrapInput = withStyles(theme => ({
   root: {

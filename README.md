@@ -1,5 +1,12 @@
 # InfiniteScrollReview (React, Redux)
 
+### Set Up
+Below are the steps to get it running.
+
+ - Install all the dependencies in the application by using the command ``` npm install ```
+ - Then start the application in another terminal by using command ``` npm start ```
+ - Run the tests using command ``` npm test ```
+
 ## Summary
 
 1. Reviews can be grouped by day, week, or month. Make sure you show the time interval for
@@ -22,9 +29,3 @@ Created the custom middleware to handle the all API requests in the application 
 
 ![sample](docs/sample.png)
 
-### Get it running
-Below are the steps to get it running.
-
- - Install all the dependencies in the application by using the command ``` npm install ```
- - Then start the application in another terminal by using command ``` npm start ```
- - Run the tests using command ``` npm test ```

@@ -14,7 +14,7 @@ export const getReviews = state => get(
 );
 
 /**
- * This selector is used to get the reviews details
+ * This selector is used to memorize reviews details
  */
 export const getReviewsSelector = createSelector(
   getReviews,

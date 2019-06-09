@@ -28,6 +28,9 @@ export class InfiniteScrollReview extends React.Component {
     this.props.fetchReviewItems(this.state.pageNumber);
   }
 
+  /**
+   * This function is used to fetch more records from the server.
+   */
   fetchMoreData = () => {
     this.props.fetchReviewItems(this.state.pageNumber + 1);
     this.setState({
@@ -48,6 +51,7 @@ export class InfiniteScrollReview extends React.Component {
           hasMore={this.props.hasMore}
           loader={<h4 className='text-center'>Loading...</h4>}
           endMessage={<h4 className='text-center'>No More Results</h4>}
+          className='infinite-scroll'
         >
           {
             isEmpty(this.props.group) ?

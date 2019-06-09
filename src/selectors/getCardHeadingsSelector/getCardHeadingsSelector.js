@@ -6,7 +6,7 @@ import { getGroupByTimeHelper } from '../../helpers/getGroupByTimeHelper';
 import { SORTING } from '../../constants/SORTING';
 
 /**
- * This selector is used to get the review card heading based on type of the
+ * This selector is used to get and memorize the review card heading based on type of the
  * grouping, type of the sorting
  */
 export const getCardHeadingsSelector = createSelector(

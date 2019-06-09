@@ -1,30 +1,28 @@
 import axios from 'axios';
-import { API } from '../constants/constants';
+import { API } from '../constants/CONSTANTS';
 import { accessDenied, apiError, apiStart, apiEnd } from '../actions/apiActions/apiActions';
 
-// TODO api middle ware
-const apiMiddleware = ({dispatch}) => next => action => {
+/**
+ * This is a custom apiMiddleware which is used to handle async calls across
+ * the application.
+ */
+const apiMiddleware = ({ dispatch }) => next => action => {
   next(action);
 
-  if (action.type !== API) return;
+  /* If action type is not an api then it will return */
+  if (action.type !== API)
+    return;
 
   const {
     url,
     method,
     data,
-    accessToken,
     onSuccess,
     onFailure,
     label,
     headers
   } = action.payload;
   const dataOrParams = ['GET', 'DELETE'].includes(method) ? 'params' : 'data';
-
-  // axios default configs
-  axios.defaults.baseURL = process.env.REACT_APP_BASE_URL || '';
-  axios.defaults.headers.common['Content-Type'] = 'application/json';
-  // TODO
-  // axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
 
   if (label) {
     dispatch(apiStart(label));

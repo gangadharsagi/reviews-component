@@ -14,7 +14,7 @@ export const getHasMore = state => get(
 );
 
 /**
- * This selector is used to get the hasMore value from the api response
+ * This selector is used to memorize the hasMore value from the api response
  */
 export const hasMoreSelector = createSelector(
   getHasMore,

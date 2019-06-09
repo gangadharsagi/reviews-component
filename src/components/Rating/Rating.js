@@ -1,15 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Icon from '@material-ui/core/Icon';
-import { makeStyles } from '@material-ui/core';
+import { RatingStyles } from './RatingStyles';
 
-const useStyles = makeStyles(
-  () => ({
-    icon: {
-      fontSize: 16,
-    },
-  }),
-);
 
 export const starsArray = [1, 2, 3, 4, 5];
 
@@ -22,19 +15,19 @@ export const starsArray = [1, 2, 3, 4, 5];
  * @returns {*} a React Stateless Functional Component
  */
 export const Rating = ({ stars }) => {
-  const classes = useStyles();
+  const classes = RatingStyles();
   return (
     <div>
       {
         starsArray.map((item, index) => (
           <Icon
             key={item}
+            className={classes.icon}
             color={
               index < stars ?
                 'inherit' :
                 'disabled'
             }
-            className={classes.icon}
           >
             star
           </Icon>

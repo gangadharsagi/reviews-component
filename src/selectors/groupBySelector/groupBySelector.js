@@ -14,7 +14,7 @@ export const getGroupBy = state => get(
 );
 
 /**
- * This selector is used to get group by value from the store.
+ * This selector is used to memorize the group value from the store.
  */
 export const groupBySelector = createSelector(
   getGroupBy,

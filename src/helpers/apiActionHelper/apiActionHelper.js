@@ -1,6 +1,9 @@
-import { API } from '../constants/constants';
+import { API } from '../../constants/CONSTANTS';
 
-export const apiAction = ({
+/**
+ * This helper is used to dispatch an api action
+ */
+export const apiActionHelper = ({
   url = '',
   method = 'GET',
   data = null,

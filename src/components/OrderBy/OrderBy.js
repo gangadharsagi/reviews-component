@@ -3,25 +3,9 @@ import * as PropTypes from 'prop-types';
 import InputLabel from '@material-ui/core/InputLabel';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import FormControl from '@material-ui/core/FormControl';
-import { makeStyles } from '@material-ui/core';
 import { SORTING } from '../../constants/SORTING';
-import { BootstrapInput } from '../styledComponents/BootstrapInput';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  margin: {
-    margin: theme.spacing(1),
-  },
-  icon: {
-    fontSize: 16,
-    position: 'relative',
-    top: 2,
-    left: 2,
-  },
-}));
+import { BootstrapInput } from '../StyledComponents/BootstrapInput';
+import { OrderByStyles } from './OrderByStyles';
 
 /**
  * This component is used to show reviews in most recent order or
@@ -32,7 +16,7 @@ const useStyles = makeStyles(theme => ({
  * @returns {*} a React Stateless Functional Component
  */
 export const OrderBy = ({ order, handleChange }) => {
-  const classes = useStyles();
+  const classes = OrderByStyles();
   return (
     <FormControl className={classes.margin}>
       <InputLabel htmlFor="group">Order By</InputLabel>
