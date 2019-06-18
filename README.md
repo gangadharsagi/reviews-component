@@ -1,6 +1,6 @@
 [![CircleCI](https://circleci.com/gh/gangadharsagi/reviews-component.svg?style=svg)](https://circleci.com/gh/gangadharsagi/reviews-component)
 
-# Sellics Frontend Challenge (React, Redux)
+# User Reviews (React, Redux)
 
 ### Setup
 Below are the steps to get it running.
