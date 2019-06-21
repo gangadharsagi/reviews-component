@@ -37,17 +37,6 @@ export class InfiniteScrollReview extends React.Component {
   return (
     <div className='container'>
       <div className='wrapper'>
-        <div className='logo'>
-          <a
-            href='http://www.sellics.com'
-            target='_blank'
-            rel="noopener noreferrer" >
-          <img
-            src={mySvg}
-            alt='logo'
-          />
-          </a>
-        </div>
         <GroupAndOrderBy />
         <FilterByContainer />
         <RefreshButtonContainer />
