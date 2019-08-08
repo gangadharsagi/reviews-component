@@ -11,6 +11,11 @@ Below are the steps to get it running.
 
 Once the server is up the site will be available at `http://localhost:3000/`
 
+# Description
+
+Design and implement a React + Redux application that resembles the Reviews section of an Amazon
+Products page.
+
 ## Requirements
 - [x] Reviews can be grouped by day, week, or month. Make sure you show the time interval for
 which reviews are shown (i.e. “05.02”, “05.02 - 11.02” or “January”)
